@@ -13,10 +13,10 @@ public class Anagrams {
 		for (int i = 0; i < words.length; i++) {
 			char[] wordChars = words[i].toCharArray();
 			for (int j = 0, k = wordChars.length - 1; j <= (wordChars.length / 2); j++) {
-				if (!isLetter(wordChars[k])) {
+				if (!Character.isLetter(wordChars[k])) {
 					k--;
 				}
-				if (isLetter(wordChars[j]) && (j < k)) {
+				if (Character.isLetter(wordChars[j]) && (j < k)) {
 					char tempChar;
 					tempChar = wordChars[k];
 					wordChars[k] = wordChars[j];
@@ -28,14 +28,5 @@ public class Anagrams {
 			reversedInput.append(" ");
 		}
 		return reversedInput.toString().trim();
-	}
-	
-	public static boolean isLetter(char c) {
-		byte inputCharByte = (byte) c;
-		if ((inputCharByte > 64 && inputCharByte < 91) || (inputCharByte > 96 && inputCharByte < 123)) {
-			return true;
-		} else {
-			return false;
-		}
 	}
 }
