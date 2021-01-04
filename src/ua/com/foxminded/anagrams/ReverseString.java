@@ -13,12 +13,12 @@ public class ReverseString {
         String[] inputWords = input.split(DELIMITER);
         StringJoiner reversedInput = new StringJoiner(DELIMITER);
         for (String word : inputWords) {
-            reversedInput.add(swapLetters(word));
+            reversedInput.add(reverseWord(word));
         }
         return reversedInput.toString();
     }
 
-    public String swapLetters(String word) {
+    public String reverseWord(String word) {
         char[] wordChars = new char[word.length()];
 
         for (int i = 0; i < word.length(); i++) {
