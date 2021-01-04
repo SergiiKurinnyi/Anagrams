@@ -7,22 +7,18 @@ import java.util.StringJoiner;
 
 public class ReverseString {
 
-    final static String DELIMITER = " ";
+    private static final String DELIMITER = " ";
 
-    public static String reverseString(String input) {
+    public String reverseString(String input) {
         String[] inputWords = input.split(DELIMITER);
-        return joinReversedWords(inputWords);
-    }
-
-    public static String joinReversedWords(String[] words) {
         StringJoiner reversedInput = new StringJoiner(DELIMITER);
-        for (String word : words) {
+        for (String word : inputWords) {
             reversedInput.add(swapLetters(word));
         }
         return reversedInput.toString();
     }
 
-    public static String swapLetters(String word) {
+    public String swapLetters(String word) {
         char[] wordChars = new char[word.length()];
 
         for (int i = 0; i < word.length(); i++) {
@@ -42,7 +38,7 @@ public class ReverseString {
         return String.valueOf(wordChars);
     }
 
-    public static char[] swapChars(char j, char k) {
+    public char[] swapChars(char j, char k) {
         char[] swappedChars = new char[2];
         swappedChars[0] = j;
         swappedChars[1] = k;
@@ -50,3 +46,4 @@ public class ReverseString {
     }
 
 }
+
