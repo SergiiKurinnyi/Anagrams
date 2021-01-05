@@ -10,6 +10,9 @@ public class ReverseString {
     private static final String DELIMITER = " ";
 
     public String reverseString(String input) {
+        if (input == null) {
+            throw new IllegalArgumentException("Input cannot be null!");
+        }
         String[] inputWords = input.split(DELIMITER);
         StringJoiner reversedInput = new StringJoiner(DELIMITER);
         for (String word : inputWords) {
@@ -18,7 +21,7 @@ public class ReverseString {
         return reversedInput.toString();
     }
 
-    public String reverseWord(String word) {
+    private String reverseWord(String word) {
         char[] wordChars = new char[word.length()];
 
         for (int i = 0; i < word.length(); i++) {
@@ -38,7 +41,7 @@ public class ReverseString {
         return String.valueOf(wordChars);
     }
 
-    public char[] swapChars(char j, char k) {
+    private char[] swapChars(char j, char k) {
         char[] swappedChars = new char[2];
         swappedChars[0] = j;
         swappedChars[1] = k;
