@@ -16,7 +16,7 @@ class AnagramsTest {
     }
 
     @Test
-    void testReverseCustomerProvidedString() {
+    void ReverseString_ShouldReverseLettersOnly_IfContainNonLetters() {
         String input = "a1bcd efg!h";
         String actual = reverse.reverseString(input);
         String expected = "d1cba hgf!e";
@@ -24,15 +24,15 @@ class AnagramsTest {
     }
 
     @Test
-    void testOneWordString() {
-        String input = "a1bcd";
+    void ReverseString_ShouldReverse_IfNoSpaces() {
+        String input = "abcdefgh";
         String actual = reverse.reverseString(input);
-        String expected = "d1cba";
+        String expected = "hgfedcba";
         assertEquals(expected, actual);
     }
 
     @Test
-    void testNonLettersOnlyInput() {
+    void ReverseString_ShouldIgnoreReverse_IfNonLettersOnly() {
         String input = "345!3#45?345&^";
         String actual = reverse.reverseString(input);
         String expected = "345!3#45?345&^";
@@ -40,7 +40,7 @@ class AnagramsTest {
     }
 
     @Test
-    void testEmptyInput() {
+    void ReverseString_ShouldReturnEmpty_IfEmptyInput() {
         String input = "";
         String actual = reverse.reverseString(input);
         String expected = "";
@@ -48,7 +48,7 @@ class AnagramsTest {
     }
 
     @Test
-    void testNullInput() {
+    void ReverseString_ShouldThrowIllegalArgumentException_IfInputIsNull() {
         String expected = "Input cannot be null!";
 
         Exception exception = assertThrows(IllegalArgumentException.class, () -> reverse.reverseString(null));
