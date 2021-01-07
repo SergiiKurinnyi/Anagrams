@@ -4,7 +4,7 @@ public class Main {
     
     public static void main(String[] args) {
         ReverseString reverse = new ReverseString();
-        System.out.println(reverse.reverseString("a1bcd efg!h"));
+        System.out.println(reverse.reverseString("a1234bcd efg8h"));
     }
 
 }

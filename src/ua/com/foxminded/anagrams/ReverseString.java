@@ -2,6 +2,9 @@ package ua.com.foxminded.anagrams;
 
 import static java.lang.Character.isLetter;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 import java.util.StringJoiner;
 
 
@@ -22,30 +25,23 @@ public class ReverseString {
     }
 
     private String reverseWord(String word) {
-        char[] wordChars = new char[word.length()];
+        char[] wordChars = word.toCharArray();
+        List<Character> charsOnly = new ArrayList<>();
 
-        for (int i = 0; i < word.length(); i++) {
-            wordChars = word.toCharArray();
-            for (int j = 0, k = wordChars.length - 1; j <= (wordChars.length / 2); j++) {
-                if (!isLetter(wordChars[k])) {
-                    k--;
-                }
-                if (isLetter(wordChars[j]) && (j < k)) {
-                    char[] swappedChars = swapChars(wordChars[j], wordChars[k]);
-                    wordChars[k] = swappedChars[0];
-                    wordChars[j] = swappedChars[1];
-                    k--;
-                }
+        for (char c : wordChars) {
+            if (isLetter(c)) {
+                charsOnly.add(c);
+            }
+        }
+        Collections.reverse(charsOnly);
+
+        for (int i = 0, k = 0; i < wordChars.length; i++) {
+            if (isLetter(wordChars[i])) {
+                wordChars[i] = charsOnly.get(k);
+                k++;
             }
         }
         return String.valueOf(wordChars);
-    }
-
-    private char[] swapChars(char j, char k) {
-        char[] swappedChars = new char[2];
-        swappedChars[0] = j;
-        swappedChars[1] = k;
-        return swappedChars;
     }
 
 }
