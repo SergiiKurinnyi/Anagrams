@@ -28,9 +28,9 @@ public class ReverseString {
         char[] wordChars = word.toCharArray();
         List<Character> charsOnly = new ArrayList<>();
 
-        for (char c : wordChars) {
-            if (isLetter(c)) {
-                charsOnly.add(c);
+        for (char symbol : wordChars) {
+            if (isLetter(symbol)) {
+                charsOnly.add(symbol);
             }
         }
         Collections.reverse(charsOnly);

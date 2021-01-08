@@ -96,8 +96,4 @@ class AnagramsTest {
         assertEquals(expected, actual);
     }
 
-
-
-
-
 }
