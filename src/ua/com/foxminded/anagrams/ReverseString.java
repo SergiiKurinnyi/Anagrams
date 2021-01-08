@@ -35,10 +35,11 @@ public class ReverseString {
         }
         Collections.reverse(charsOnly);
 
-        for (int i = 0, k = 0; i < wordChars.length; i++) {
+        int counter = 0;
+        for (int i = 0; i < wordChars.length; i++) {
             if (isLetter(wordChars[i])) {
-                wordChars[i] = charsOnly.get(k);
-                k++;
+                wordChars[i] = charsOnly.get(counter);
+                counter++;
             }
         }
         return String.valueOf(wordChars);
