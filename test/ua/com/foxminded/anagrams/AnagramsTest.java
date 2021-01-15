@@ -26,7 +26,7 @@ class AnagramsTest {
     }
 
     @Test
-    void ReverseString_ShouldThrowIllegalArgumentException_IfInputIsNull() {
+    void reverseString_ShouldThrowIllegalArgumentException_IfInputIsNull() {
         String expected = "Input cannot be null!";
 
         Exception exception = assertThrows(IllegalArgumentException.class, () -> reverse.reverseString(null));
@@ -34,63 +34,63 @@ class AnagramsTest {
     }
 
     @Test
-    void ReverseString_ShouldReturnEmpty_IfEmptyInput() {
+    void reverseString_ShouldReturnEmpty_IfEmptyInput() {
         String actual = reverse.reverseString(EMPTY_INPUT);
         String expected = "";
         assertEquals(expected, actual);
     }
 
     @Test
-    void ReverseString_ShouldReverse_IfNoSpace() {
+    void reverseString_ShouldReverse_IfNoSpace() {
         String actual = reverse.reverseString(NO_SPACE);
         String expected = "hgfedcba";
         assertEquals(expected, actual);
     }
 
     @Test
-    void ReverseString_ShouldReverse_IfLettersOnly() {
+    void reverseString_ShouldReverse_IfLettersOnly() {
         String actual = reverse.reverseString(LETTERS_ONLY);
         String expected = "dcba hgfe";
         assertEquals(expected, actual);
     }
 
     @Test
-    void ReverseString_ShouldNotReverse_IfNumbersOnly() {
+    void reverseString_ShouldNotReverse_IfNumbersOnly() {
         String actual = reverse.reverseString(NUMBERS_ONLY);
         String expected = "1234 5678";
         assertEquals(expected, actual);
     }
 
     @Test
-    void ReverseString_ShouldNotReverse_IfSpecialCharsOnly() {
+    void reverseString_ShouldNotReverse_IfSpecialCharsOnly() {
         String actual = reverse.reverseString(SPECIAL_CHARS_ONLY);
         String expected = "!@#$ %^&*";
         assertEquals(expected, actual);
     }
 
     @Test
-    void ReverseString_ShouldReverseLettersOnly_IfLettersAndNumbers() {
+    void reverseString_ShouldReverseLettersOnly_IfLettersAndNumbers() {
         String actual = reverse.reverseString(LETTERS_AND_NUMBERS);
         String expected = "d1234cba hgf8e";
         assertEquals(expected, actual);
     }
 
     @Test
-    void ReverseString_ShouldReverseLettersOnly_IfLettersAndSpecialChars() {
+    void reverseString_ShouldReverseLettersOnly_IfLettersAndSpecialChars() {
         String actual = reverse.reverseString(LETTER_AND_SPECIAL_CHARS);
         String expected = "dc#ba hg%f!e";
         assertEquals(expected, actual);
     }
 
     @Test
-    void ReverseString_ShouldNotReverse_IfNumbersAndSpecialChars() {
+    void reverseString_ShouldNotReverse_IfNumbersAndSpecialChars() {
         String actual = reverse.reverseString(NUMBERS_AND_SPECIAL_CHARS);
         String expected = "12#34 56%7!8";
         assertEquals(expected, actual);
     }
 
     @Test
-    void ReverseString_ShouldReverseLettersOnly_IfLettersAndNumbersAndNonLetters() {
+    void reverseString_ShouldReverseLettersOnly_IfLettersAndNumbersAndNonLetters() {
         String actual = reverse.reverseString(LETTERS_AND_NUMBERS_AND_SPECIAL_CHARS);
         String expected = "dc12#34ba hg56%7f!8e";
         assertEquals(expected, actual);
