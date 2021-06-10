@@ -1,6 +1,4 @@
 # Anagrams
-Foxminded.com.ua Java Spring course
-
 
 Task 1 - Anagrams
 
